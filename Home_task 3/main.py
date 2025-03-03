@@ -10,6 +10,7 @@ I2C_SDA = 8  # Change if needed
 # Initialize SoftI2C
 i2c = SoftI2C(scl=Pin(I2C_SCL), sda=Pin(I2C_SDA))
 
+
 # Scan for I2C devices
 devices = i2c.scan()
 oled = None
