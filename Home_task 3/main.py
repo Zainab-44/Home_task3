@@ -14,6 +14,7 @@ i2c = SoftI2C(scl=Pin(I2C_SCL), sda=Pin(I2C_SDA))
 devices = i2c.scan()
 oled = None
 
+
 if devices:
     print(f"✅ I2C device(s) found: {[hex(device) for device in devices]}")
     try:
