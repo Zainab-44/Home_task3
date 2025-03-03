@@ -1,0 +1,55 @@
+TASK 3:
+
+Debounce issues occur when mechanical switches or buttons generate multiple unwanted signals due to their physical contacts
+bouncing before settling into a stable state. 
+This can lead to multiple detections for a single press, causing unintended behaviors in digital systems.
+
+Why Get Rid of It?
+Debounce issues can cause:
+
+False triggers in keypress detection.
+Erratic behavior in counters, timers, and state machines.
+Glitches in touchscreen interfaces where a single tap registers multiple times.
+Applications Where It’s Critical:
+Embedded Systems: Button presses and signal stability are crucial.
+Industrial Automation: Faulty switch readings could disrupt manufacturing processes.
+Medical Devices: Unstable readings could lead to incorrect dosages or operations.
+Gaming: Repeated keypresses can cause unintentional actions in gameplay.
+Why Does Debounce Occur?
+Debounce happens due to:
+
+Mechanical Contact Bounce: Physical buttons and switches take time to settle.
+Electrical Noise: Rapid fluctuations can register false triggers.
+Is It a Compiler Error, Logical Error, or Hardware Issue?
+Not a Compiler Error: The compiler doesn’t detect debounce since it’s a hardware behavior.
+Logical Error: If not handled in code, multiple detections can lead to incorrect logic.
+Not Due to Cheap Microcontrollers: Even high-end MCUs experience debounce with mechanical switches.
+Solution?
+
+Software debounce: Use timers or delay mechanisms to filter out rapid signal fluctuations.
+Hardware debounce: Use capacitors or debounce ICs to smooth signals.
+
+TASK 4:
+Interrupts allow microcontrollers and processors to efficiently handle external and internal events without 
+constantly checking for them in a loop. Instead of continuously polling a sensor or waiting for a button press,
+the microcontroller can focus on other tasks and react only when an event occurs.
+
+Key Benefits of Using Interrupts:
+Improves Efficiency – The CPU doesn’t waste time polling; it executes other tasks and responds only when needed.
+Faster Response Time – Critical events (e.g., emergency stop in automation) are handled immediately.
+Power Saving – The processor can enter low-power sleep modes and wake up only when an interrupt occurs.
+Handles Multiple Tasks Simultaneously – Allows the microcontroller to process multiple events without missing important data.
+How Do Interrupts Lower Processing Cost?
+Interrupts reduce CPU workload by eliminating the need for continuous polling, where the processor repeatedly checks the status of a peripheral.
+
+Example Comparison (Polling vs. Interrupts)
+Without Interrupts (Polling Method)
+
+The CPU continuously checks for a button press in a loop.
+This wastes CPU cycles and increases power consumption.
+If the button is pressed while the CPU is checking something else, it may miss the event.
+With Interrupts
+
+The CPU performs other tasks or goes into a low-power mode.
+When the button is pressed, an interrupt triggers and instantly executes the required function.
+This reduces power consumption and increases efficiency.
